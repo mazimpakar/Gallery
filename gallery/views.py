@@ -1,39 +1,30 @@
 from django.shortcuts import render,redirect
-from django.http  import HttpResponse,Http404
-import datetime as dt
+from .models import Image,Category,Location
+from django.http import Http404
+
 # Create your views here.
-# Create your views here.
-def welcome(request):
-    return render(request, 'welcome.html')
+def gallery(request):
+    images = Image.objects.all()
+    locations = Location.objects.all()
+    return render(request,'gallery.html',{'images':images,'locations':locations})
 
-def location_of_gallery(request):
-    date = dt.date.today()
-    return render(request, 'all-gallery/location-gallery.html', {"date": date,})
-    
-
-def convert_dates(dates):
-
-    # Function that gets the weekday number for the date.
-    day_number = dt.date.weekday(dates)
-
-    days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday',"Sunday"]
-
-    # Returning the actual day of the week
-    day = days[day_number]
-    return day    
-
-def category_gallery(request, past_date):
-
+def display_location(request,location_id):
     try:
-        # Converts data from the string Url
-        date = dt.datetime.strptime(cotegory, '%Y-%m-%d').date()
-
-    except ValueError:
-        # Raise 404 error when ValueError is thrown
+        location = Location.objects.get(id = location_id)
+        images = Image.objects.filter(image_location = location.id)
+    except:
         raise Http404()
-        assert False
+    return render(request,'location.html',{'location':location,'images':images})
 
-    if date == dt.date.location():
-        return redirect(gallery_of_location)
 
-    return render(request, 'all-gallery/category-gallery.html', {"date": date ,"gallery":gallery})
+def search_category(request):
+    locations = Location.objects.all()
+    if 'category' in request.GET and request.GET['category']:
+        search_term = (request.GET.get('category')).title()
+        searched_images = Image.search_by_category(search_term)
+        message = f'{search_term}'
+        return render(request,'search.html',{'message':message,'images':searched_images,'locations':locations})
+
+    else:
+        message = "You haven't searched for any category"
+        return render(request,'search.html',{'message':message,'locations':locations})
