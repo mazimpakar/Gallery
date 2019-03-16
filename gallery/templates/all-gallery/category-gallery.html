@@ -1,39 +1,43 @@
-<!-- {%extends 'all-gallery/base.html'%}
-{% block content %} 
-{{ block.super}}
+<{% extends 'all-gallery/base.html' %} {% block content %}
 
-<div class="container">
-
-  <!-- Looping through news   -->
-  {% for gallery_item in gallery %}
-
-  <!-- <div class="col-md-4">
-    <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;" src="{{image.photo.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{image.id}}">
-
-  <!-- Image Details modal -->
-
-  <!-- <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="imageTitle" aria-hidden="true">
-    <div  style="max-width:100%; max-height:100%; padding-top:100px;" class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h5 class="modal-title" id="imageTitle">{{photo.image_name}}</h5>
-          </button>
+<div class="row">     
+    {% for image in pics %}     
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns"> 
+        <div class="scale">
+            <div class="opacity">
+                <div class="view">
+                    <a href="" class="btn-view">Image</a>
+                </div>
+            </div>
+            <img src="/gallery{{photo.image.url}}" alt="Image" class="img-fluid">  
+            <!-- <h6 class="text-center" style="margin-top: 0.5vw;">{{image.category.name}}</h6>           
         </div>
-        <div class="modal-body">
-          <img src="{{image.image.url}}" style="width:570px; height:500px;" alt="Image">
-          <br>
-          {{photo.image_description}}
-        </div> -->
+    </div> -->
+<!-- 
+    <img src="{{image.category.url}}" alt="{{pic.name}}" class="img-fluid myimage"> -->
 
-  <!-- {% empty %}
-  <div class="row">
-    <h2 class="text-center">There No Gallery</h2>
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+      
+        <!-- Modal Content (The Image) -->
+        <img src='' class="modal-content" id="modal-con">
+      
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+      </div>
+
+        <div class="container">
+        
+        <button class="btn">View Details</button>
+    
+      </div> 
+
   </div>
-  {% endfor %}
 
+</div>
+    {% endfor %}
 </div>
 
 {% endblock %}
- -->
- --> -->
