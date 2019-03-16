@@ -3,9 +3,13 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from . import views
 
+
 urlpatterns=[
-    url(r'^location/$',views.location_of_gallery,name='locationGallery'),
-    url(r'^archives/(\d{4}-\d{2}-\d{2})/$',views.category_gallery,name = 'categoryGallery') 
+   url(r'^$', views.gallery, name = 'gallery'),
+    url(r'^search/', views.search_category, name = 'search_category'),
+    url(r'^location/', views.display_location, name = 'location'),
 ]
+
+
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

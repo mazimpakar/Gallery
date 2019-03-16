@@ -40,7 +40,7 @@ class Image(models.Model):
     category = models.ForeignKey(Category,max_length=140,on_delete =models.CASCADE,  blank=True, null=True) 
 
     def __str__(self):
-        return self.name
+        return self.image_name
 
     def save_image(self):
         self.save()
