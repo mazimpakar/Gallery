@@ -51,7 +51,7 @@ class Image(models.Model):
     
     @classmethod
     def get_image_by_id(cls, id):
-        image = Image.objects.get(id=id)
+        images = Image.objects.get(id=id)
         return image
 
     @classmethod
