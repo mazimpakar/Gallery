@@ -22,9 +22,9 @@
                 <h4 class="modal-title text-center">{{image.name}}</h4>
               <img src="/gallery{{image.photo.url}}" style="width:570px; height:500px;" alt="Image">
               <br>
-              Description{{image.description}}
-              Location{{image.location}}
-              Category{{image.category}}
+              Description: {{image.description}}b<br>
+              Location: {{image.location}}<br>
+              Category: {{image.category}}
             </div>
           <button class="btn btn-primary" onclick="copyUrl('{{pic.id}}-url')">Copy Image Url</button>
           <input   value="{{pic.image.url}}" id="{{pic.id}}-url" >
