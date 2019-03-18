@@ -16,18 +16,6 @@ def display_location(request):
         raise Http404()
     return render(request,'all-gallery/location-gallery.html',{'location':location,'images':images})
 
-
-# def search_category(request):
-#     location = Location.objects.all()
-#     if 'category' in request.GET and request.GET['category']:
-#         search_term = (request.GET.get('category')).title()
-#         searched_images = Image.search_by_category(search_term)
-#         message = f'{search_term}'
-#         return render(request,'search.html',{'message':message,'images':search_term,'locations':locations})
-
-#     else:
-#         message = "You haven't searched for any category"
-#         return render(request,'search.html',{'message':message,'image':search_term,'location':locations})
 def search_results(request):
     if 'image' in request.GET and request.GET['image']:
         search_input = request.GET.get('image')
@@ -39,3 +27,13 @@ def search_results(request):
     else:
         message = "Please input something in the search field"
         return render(request, 'search.html', {'message':message})
+def display_images_categories(request):    
+    images = Image.image_categories()
+
+    return render(request, 'category.html', {"images":images}) 
+
+def display_images_locations(request):    
+    images = Image.image_locations()
+
+    return render(request, 'location.html', {"images":images}) 
+
