@@ -39,33 +39,43 @@ class Image(models.Model):
     location = models.ForeignKey(Location,max_length=140,on_delete =models.CASCADE, blank=True, null=True) 
     category = models.ForeignKey(Category,max_length=140,on_delete =models.CASCADE,  blank=True, null=True) 
 
+    
     def __str__(self):
-        return self.image_name
+        return self.name
 
     def save_image(self):
-        self.save()
+        self.save()   
 
     def delete_image(self):
-        self.save()
-
+        Image.objects.filter(id = self.pk).delete() 
     
+    def update_image(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)       
+
     @classmethod
-    def get_image_by_id(cls, id):
-        images = Image.objects.get(id=id)
+    def all_pics(cls):
+        pics = cls.objects.all()
+        return iamges 
+
+    @classmethod
+    def pic_locations(cls):
+        pics = cls.objects.order_by('location')
+        return images 
+
+    @classmethod
+    def pic_categories(cls):
+        pics = cls.objects.order_by('category')
+        return image 
+
+    @classmethod
+    def get_pic(cls, id):
+        pic = cls.objects.get(id=id)
         return image
 
     @classmethod
-    def filter_by_location(cls, id):
-        image = Image.objects.filter(location_id=id).all()
-        return image
+    def search_by_category(cls, search_input):
+        images = cls.objects.filter(category__name__icontains=search_input)
+        return images      
 
-    @classmethod
-    def get_images(cls):
-        images = Image.objects.all()
-        return images
-
-
-
-    
-    
-
+    # class Meta:
+    #     ordering = ['name']
