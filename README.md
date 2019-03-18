@@ -2,9 +2,18 @@
 ### Gallery app
 ## Author:Mazimpaka M.Rose
 ## Description
-This is an application that allows a writer to publish blogs and users can view and comment on the blogs posted.
+User can view the photos of her choice click on one photo expand it and view details of the photo.
+User can search for different category ot photos
+They can also copy the link to a photo to share with others. 
+### BDD
+ Gallery Application help user to view  pictures and designs, To view a picture you can search by ID,by category,and by location
 ### Setup/Installation Requirements
-To clone this click here https://github.com/mazimpakar/Blog-app
+    *Ubuntu Software
+    *Python3.6
+    *Postgres
+    *python virtual env
+
+
 ## Run this command lines in your terminal:
 * in database:blogs =# \dt shows tables
 * To see one of table just write blogs/ SELECT * FROM name of table;
