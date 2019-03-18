@@ -23,8 +23,8 @@ def search_category(request):
         search_term = (request.GET.get('category')).title()
         searched_images = Image.search_by_category(search_term)
         message = f'{search_term}'
-        return render(request,'search.html',{'message':message,'images':searched_images,'locations':locations})
+        return render(request,'search.html',{'message':message,'images':search_term,'locations':locations})
 
     else:
         message = "You haven't searched for any category"
-        return render(request,'search.html',{'message':message,'locations':display_locations})
+        return render(request,'search.html',{'message':message,'image':search_term,'location':locations})

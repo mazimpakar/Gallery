@@ -70,6 +70,6 @@ class ImageTestClass(TestCase):
         Function to test if you can get an image by its category name
         """
         self.image.save_image()
-        images = Image.search_image('this')
+        images = Image.search_term('this')
         self.assertTrue(len(images)>0)
         
