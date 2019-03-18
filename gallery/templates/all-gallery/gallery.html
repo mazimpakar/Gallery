@@ -7,7 +7,7 @@
     {% for image in images %}
     <div class="col-md-4">
         <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;" src="/gallery{{image.photo.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{image.id}}">
-        <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')">Copy Image Url</button>
+        <button class="btn btn-primary" onclick="copyUrl('{{pic.id}}-url')">Copy Image Url</button>
 
       <!-- Image Details modal -->
 
@@ -24,10 +24,8 @@
               <br>
               {{image.description}}
             </div>
-            <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')">Copy Image Url</button> 
-     
-        <!-- <h3 class="text-center">There are No Images</h3> -->
-    
+           
+        
   </div>
   
 </div>
