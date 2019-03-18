@@ -13,6 +13,17 @@ They can also copy the link to a photo to share with others.
     *Postgres
     *python virtual env
 
+## Activate virtual aenvironment
+    *Activate virtual environment using python3.6 as default handler
+    *virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
+## Install dependancies
+Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
+## Create database 
+    * psql
+    * CREATE DATABASE galley;
+## Run initial Migration
+    * python3.6 manage.py makemigrations gallery
+    * python3.6 manage.py migrate
 
 ## Run this command lines in your terminal:
 * in database:blogs =# \dt shows tables
