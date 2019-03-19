@@ -1,6 +1,7 @@
 ## Project name
 ### Gallery app
-## Author:Mazimpaka M.Rose
+## Author:
+Mazimpaka M.Rose
 ## Description
 User can view the photos of her choice click on one photo expand it and view details of the photo.
 User can search for different category ot photos
