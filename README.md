@@ -30,16 +30,17 @@ Install dependancies that will create an environment for the app to run pip3 ins
 
 
 ## Technologies Used
- * Html
- * Python v3.6
- * Boostrap
- * Flask
+    * Html
+    * Python v3.6
+    * Boostrap
+    * Django
+ 
 
 ## Contacts:
 
-* Email: rosemazimpaka2@gmail.com
-* Phone: 0786950337
-* Whatapp number:0786950337
+    * Email: rosemazimpaka2@gmail.com
+    * Phone: 0786950337
+    * Whatapp number:0786950337
 
 
 ## Copyright
