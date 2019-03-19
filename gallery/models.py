@@ -53,29 +53,29 @@ class Image(models.Model):
         self.objects.filter(id = self.pk).update(**kwargs)       
 
     @classmethod
-    def all_pics(cls):
-        pics = cls.objects.all()
+    def all_images(cls):
+        images = cls.objects.all()
         return iamges 
 
     @classmethod
-    def pic_locations(cls):
-        pics = cls.objects.order_by('location')
+    def image_locations(cls):
+        images = cls.objects.order_by('location')
         return images 
 
     @classmethod
-    def pic_categories(cls):
-        pics = cls.objects.order_by('category')
+    def image_categories(cls):
+        images = cls.objects.order_by('category')
         return image 
 
     @classmethod
-    def get_pic(cls, id):
-        pic = cls.objects.get(id=id)
+    def get_image(cls, id):
+        image = cls.objects.get(id=id)
         return image
 
     @classmethod
     def search_by_category(cls, search_input):
-        images = cls.objects.filter(category__name__icontains=search_input)
-        return images      
+        image = cls.objects.filter(category__name__icontains=search_input)
+        return image      
 
-    # class Meta:
-    #     ordering = ['name']
+    class Meta:
+        ordering = ['image_name']

@@ -22,11 +22,11 @@ def search_results(request):
         searched_images = Image.search_by_category(search_input)
         message = f"{search_input}"
 
-        return render(request, 'search.html', {"message":message, "images":searched_images})
+        return render(request, 'all-gallery/search.html', {"message":message, "images":searched_images})
 
     else:
         message = "Please input something in the search field"
-        return render(request, 'search.html', {'message':message})
+        return render(request, 'all-gallery/search.html', {'message':message})
 def display_images_categories(request):    
     images = Image.image_categories()
 
