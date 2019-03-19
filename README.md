@@ -24,12 +24,11 @@ Install dependancies that will create an environment for the app to run pip3 ins
 ## Run initial Migration
     * python3.6 manage.py makemigrations gallery
     * python3.6 manage.py migrate
+## Run the app
+    * python3.6 manage.py runserver
+    * Open terminal on localhost:8000
 
-## Run this command lines in your terminal:
-* in database:blogs =# \dt shows tables
-* To see one of table just write blogs/ SELECT * FROM name of table;
-* ./start.sh
-* python3.6 manage.py shell
+
 ## Technologies Used
  * Html
  * Python v3.6
@@ -47,5 +46,5 @@ Install dependancies that will create an environment for the app to run pip3 ins
  copyright (c) 2019 Mazimpaka M.Rose
 
 ## Licence
- This software mazimpakar/Blog app is licensed under the MIT License
+ This software mazimpakar/Gallery app is licensed under the MIT License
 
